@@ -62,6 +62,7 @@ fun FormDataDiri(modifier: Modifier, it: Any) {
             OutlinedTextField(
                 value = textAlamat,
                 singleLine = true,
+                modifier = Modifier.width(width = 250.dp),
 
             )
         }
