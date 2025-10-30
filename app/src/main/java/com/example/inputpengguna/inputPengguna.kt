@@ -35,6 +35,8 @@ fun FormDataDiri(modifier: Modifier) {
             OutlinedTextField(
                 value = textName,
                 singleLine = true,
+                shape = MaterialTheme.shapes.large,
+
 
             )
         }
