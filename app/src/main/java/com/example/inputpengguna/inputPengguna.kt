@@ -83,16 +83,6 @@ fun FormDataDiri(modifier: Modifier) {
                     textAlamat = it
                 }
             )
-            HorizontalDivider(
-                modifier = Modifier.padding(
-                    bottom = dimensionResource(R.dimen.padding_medium),
-                    top = dimensionResource(
-                        id = R.dimen.padding_medium
-                    )
-                ),
-                thickness = dimensionResource(id = R.dimen.divider_tipis),
-                color = Color.DarkGray
-            )
             Button(
                 modifier = Modifier.fillMaxWidth(fraction = 1f),
                 enabled = textAlamat.isNotEmpty(),
@@ -104,13 +94,6 @@ fun FormDataDiri(modifier: Modifier) {
                 Text(text = stringResource(R.string.submit))
             }
         }
-            HorizontalDivider(
-                modifier = Modifier.padding(
-                    bottom = dimensionResource(R.dimen.padding_medium),
-                    top = dimensionResource(R.dimen.padding_medium)),
-                thickness = dimensionResource(R.dimen.divider_tipis),
-                color = Color.DarkGray
-            )
             ElevatedCard (
                 elevation= CardDefaults.cardElevation(defaultElevation = 10.dp),
                 colors = CardDefaults.cardColors(containerColor = Color.White),
