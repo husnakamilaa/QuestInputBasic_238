@@ -2,6 +2,7 @@ package com.example.inputpengguna
 
 import androidx.annotation.Dimension
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -45,22 +46,24 @@ fun FormDataDiri(modifier: Modifier) {
     Column(modifier= modifier.padding(top = 50.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally)
-        {
+    {
+        Box() {
             OutlinedTextField(
                 value = textName,
                 singleLine = true,
                 shape = MaterialTheme.shapes.large,
                 modifier = Modifier.width(width = 250.dp),
                 label = { Text("Nama Lengkap") },
-                onValueChange =  {
+                onValueChange = {
                     textName = it
                 }
             )
             Row {
                 gender.forEach { item ->
-                    Row(modifier = Modifier.selectable(
+                    Row(
+                        modifier = Modifier.selectable(
                         selected = textJK == item,
-                        onClick = {textJK = item}
+                        onClick = { textJK = item }
                     ), verticalAlignment = Alignment.CenterVertically) {
                         RadioButton(
                             selected = textJK == item,
@@ -75,7 +78,7 @@ fun FormDataDiri(modifier: Modifier) {
                 value = textAlamat,
                 singleLine = true,
                 modifier = Modifier.width(width = 250.dp),
-                label = {Text(text = "Alamat Lengkap")},
+                label = { Text(text = "Alamat Lengkap") },
                 onValueChange = {
                     textAlamat = it
                 }
@@ -85,19 +88,22 @@ fun FormDataDiri(modifier: Modifier) {
                     bottom = dimensionResource(R.dimen.padding_medium),
                     top = dimensionResource(
                         id = R.dimen.padding_medium
-                    )),
+                    )
+                ),
                 thickness = dimensionResource(id = R.dimen.divider_tipis),
                 color = Color.DarkGray
             )
-            Button(modifier = Modifier.fillMaxWidth(fraction = 1f),
+            Button(
+                modifier = Modifier.fillMaxWidth(fraction = 1f),
                 enabled = textAlamat.isNotEmpty(),
                 onClick = {
-                    name=textName
-                    jenis=textJK
-                    alamat=textAlamat
+                    name = textName
+                    jenis = textJK
+                    alamat = textAlamat
                 }) {
                 Text(text = stringResource(R.string.submit))
             }
+        }
             HorizontalDivider(
                 modifier = Modifier.padding(
                     bottom = dimensionResource(R.dimen.padding_medium),
@@ -107,15 +113,15 @@ fun FormDataDiri(modifier: Modifier) {
             )
             ElevatedCard (
                 elevation= CardDefaults.cardElevation(defaultElevation = 10.dp),
-                colors = CardDefaults.cardColors(containerColor = Color.Black),
+                colors = CardDefaults.cardColors(containerColor = Color.White),
                 modifier = Modifier
                     .height(100.dp)
                     .width(300.dp)
             ){
                 Column  (modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),) {
-                    Text(text = "Nama : "+name, color = Color.White)
-                    Text(text = "Gender : "+jenis, color = Color.White)
-                    Text(text = "Alamat : "+alamat, color = Color.White)
+                    Text(text = "Nama : "+name, color = Color.Black)
+                    Text(text = "Gender : "+jenis, color = Color.Black)
+                    Text(text = "Alamat : "+alamat, color = Color.Black)
                 }
             }
         }
