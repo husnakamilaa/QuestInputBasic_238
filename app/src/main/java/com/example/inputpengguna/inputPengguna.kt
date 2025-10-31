@@ -48,52 +48,6 @@ fun FormDataDiri(modifier: Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally)
     {
         Box() {
-            Column { OutlinedTextField(
-                value = textName,
-                singleLine = true,
-                shape = MaterialTheme.shapes.large,
-                modifier = Modifier.width(width = 250.dp),
-                label = { Text("Nama Lengkap") },
-                onValueChange = {
-                    textName = it
-                }
-            )
-                Row {
-                    gender.forEach { item ->
-                        Row(
-                            modifier = Modifier.selectable(
-                                selected = textJK == item,
-                                onClick = { textJK = item }
-                            ), verticalAlignment = Alignment.CenterVertically) {
-                            RadioButton(
-                                selected = textJK == item,
-                                onClick = {
-                                    textJK = item
-                                })
-                            Text(text = item)
-                        }
-                    }
-                }
-                OutlinedTextField(
-                    value = textAlamat,
-                    singleLine = true,
-                    modifier = Modifier.width(width = 250.dp),
-                    label = { Text(text = "Alamat Lengkap") },
-                    onValueChange = {
-                        textAlamat = it
-                    }
-                )
-                Button(
-                    modifier = Modifier.fillMaxWidth(fraction = 1f),
-                    enabled = textAlamat.isNotEmpty(),
-                    onClick = {
-                        name = textName
-                        jenis = textJK
-                        alamat = textAlamat
-                    }) {
-                    Text(text = stringResource(R.string.submit))
-                } }
-        }
             ElevatedCard (
                 elevation= CardDefaults.cardElevation(defaultElevation = 10.dp),
                 colors = CardDefaults.cardColors(containerColor = Color.White),
@@ -102,10 +56,54 @@ fun FormDataDiri(modifier: Modifier) {
                     .width(380.dp)
             ){
                 Column  (modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),) {
-                    Text(text = "Nama : "+name, color = Color.Black)
-                    Text(text = "Gender : "+jenis, color = Color.Black)
-                    Text(text = "Alamat : "+alamat, color = Color.Black)
+                    OutlinedTextField(
+                        value = textName,
+                        singleLine = true,
+                        shape = MaterialTheme.shapes.large,
+                        modifier = Modifier.width(width = 250.dp),
+                        label = { Text("Nama Lengkap") },
+                        onValueChange = {
+                            textName = it
+                        }
+                    )
+                    Row {
+                        gender.forEach { item ->
+                            Row(
+                                modifier = Modifier.selectable(
+                                    selected = textJK == item,
+                                    onClick = { textJK = item }
+                                ), verticalAlignment = Alignment.CenterVertically) {
+                                RadioButton(
+                                    selected = textJK == item,
+                                    onClick = {
+                                        textJK = item
+                                    })
+                                Text(text = item)
+                            }
+                        }
+                    }
+                    OutlinedTextField(
+                        value = textAlamat,
+                        singleLine = true,
+                        modifier = Modifier.width(width = 250.dp),
+                        label = { Text(text = "Alamat Lengkap") },
+                        onValueChange = {
+                            textAlamat = it
+                        }
+                    )
+                    Button(
+                        modifier = Modifier.fillMaxWidth(fraction = 1f),
+                        enabled = textAlamat.isNotEmpty(),
+                        onClick = {
+                            name = textName
+                            jenis = textJK
+                            alamat = textAlamat
+                        }) {
+                        Text(text = stringResource(R.string.submit))
+                    }
                 }
             }
+        }
+
         }
 }
