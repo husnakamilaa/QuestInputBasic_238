@@ -41,8 +41,8 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun FormDataDiri(modifier: Modifier) {
-    var textName by remember { mutableStateOf(value="") }
-    var textAlamat by remember { mutableStateOf(value="") }
+    var textName by remember { mutableStateOf(value = "") }
+    var textAlamat by remember { mutableStateOf(value = "") }
     var textJK by remember { mutableStateOf(value = "") }
     var textStatus by remember { mutableStateOf(value = "") }
 
@@ -180,6 +180,7 @@ fun FormDataDiri(modifier: Modifier) {
             }
         }
     }
+}
 
 
 
