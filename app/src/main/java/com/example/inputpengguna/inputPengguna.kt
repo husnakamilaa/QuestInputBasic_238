@@ -92,10 +92,95 @@ fun FormDataDiri(modifier: Modifier) {
                     .heightIn(min = 650.dp)
                     .padding(horizontal = 8.dp)
             ) {
+                Column(
+                    modifier = Modifier
+                        .padding(horizontal = 16.dp, vertical = 20.dp),
+                    verticalArrangement = Arrangement.spacedBy(20.dp)
+                ) {
+                    // Nama Lengkap
+                    OutlinedTextField(
+                        value = textName,
+                        onValueChange = { textName = it },
+                        label = { Text("Nama Lengkap") },
+                        singleLine = true,
+                        modifier = Modifier.fillMaxWidth()
+                    )
 
+                    // Jenis Kelamin
+                    Column {
+                        Text("Jenis Kelamin", fontWeight = FontWeight.SemiBold)
+                        gender.forEach { item ->
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .selectable(
+                                        selected = textJK == item,
+                                        onClick = { textJK = item }
+                                    ),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                RadioButton(
+                                    selected = textJK == item,
+                                    onClick = { textJK = item }
+                                )
+                                Text(text = item)
+                            }
+                        }
+                    }
+
+                    // Status Perkawinan
+                    Column {
+                        Text("Status Perkawinan", fontWeight = FontWeight.SemiBold)
+                        statusPerkawinan.forEach { item ->
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .selectable(
+                                        selected = textStatus == item,
+                                        onClick = { textStatus = item }
+                                    ),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                RadioButton(
+                                    selected = textStatus == item,
+                                    onClick = { textStatus = item }
+                                )
+                                Text(text = item)
+                            }
+                        }
+                    }
+
+                    // Alamat
+                    OutlinedTextField(
+                        value = textAlamat,
+                        onValueChange = { textAlamat = it },
+                        label = { Text("Alamat") },
+                        singleLine = true,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+
+                    // Tombol Submit
+                    Button(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(50.dp),
+                        enabled = textName.isNotEmpty() && textAlamat.isNotEmpty(),
+                        onClick = {
+                            name = textName
+                            jenis = textJK
+                            alamat = textAlamat
+                            status = textStatus
+                        },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color(0xFF9B47E6)
+                        )
+                    ) {
+                        Text(text = "Submit", color = Color.White)
+                    }
+                }
             }
-
         }
+    }
 
 
 
