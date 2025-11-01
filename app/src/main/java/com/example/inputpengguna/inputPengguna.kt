@@ -57,7 +57,14 @@ fun FormDataDiri(modifier: Modifier) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
         ){
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(70.dp),
+                contentAlignment = Alignment.Center
+            ) {
 
+            }
         }
 
     }
