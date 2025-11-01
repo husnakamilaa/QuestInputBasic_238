@@ -58,8 +58,7 @@ fun FormDataDiri(modifier: Modifier) {
     Box(
         modifier = modifier
             .background(Color(0xFFE9C1F5))
-            .fillMaxSize()
-            .padding(16.dp),
+            .fillMaxSize(),
         contentAlignment = Alignment.TopCenter
     ) {
         Column(
@@ -70,8 +69,7 @@ fun FormDataDiri(modifier: Modifier) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(70.dp)
-                    .background(Color(0xFFCD73E8)),
-                contentAlignment = Alignment.Center
+                    .background(Color(0xFFCD73E8))
             ) {
                 Text(
                     text = "Formulir Pendaftaran",
