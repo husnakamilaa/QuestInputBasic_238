@@ -47,7 +47,11 @@ fun FormDataDiri(modifier: Modifier) {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally)
     {
-        Box() {
+        Box(modifier = Modifier
+            .fillMaxWidth(1f),
+            colors = CardDefaults.cardColors(
+                containerColor = Color(android.graphics.Color.parseColor("#E9C1F5"))
+            )) {
             ElevatedCard (
                 elevation= CardDefaults.cardElevation(defaultElevation = 10.dp),
                 colors = CardDefaults.cardColors(containerColor = Color.White),
@@ -55,7 +59,7 @@ fun FormDataDiri(modifier: Modifier) {
                     .height(950.dp)
                     .width(380.dp)
             ){
-                Column  (modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),) {
+                Column  (modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp)) {
                     OutlinedTextField(
                         value = textName,
                         singleLine = true,
