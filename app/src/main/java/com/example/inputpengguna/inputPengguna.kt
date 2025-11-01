@@ -69,7 +69,13 @@ fun FormDataDiri(modifier: Modifier) {
                     ),
                     modifier = Modifier.fillMaxSize()
                 ) {
-
+                    Box(contentAlignment = Alignment.Center) {
+                        Text(
+                            text = "Formulir Pendaftaran",
+                            color = Color.White,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp
+                        )
                 }
 
             }
