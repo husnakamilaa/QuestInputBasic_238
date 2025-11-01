@@ -85,8 +85,7 @@ fun FormDataDiri(modifier: Modifier) {
                 colors = CardDefaults.cardColors(containerColor = Color.White),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .heightIn(min = 650.dp)
-                    .padding(horizontal = 8.dp)
+                    .padding(16.dp)
             ) {
                 Column(
                     modifier = Modifier
