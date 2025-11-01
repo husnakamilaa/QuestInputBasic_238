@@ -60,7 +60,7 @@ fun FormDataDiri(modifier: Modifier) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
-        ){
+        ) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -80,9 +80,9 @@ fun FormDataDiri(modifier: Modifier) {
                             fontWeight = FontWeight.Bold,
                             fontSize = 20.sp
                         )
+                    }
                 }
             }
-        }
             Spacer(modifier = Modifier.height(16.dp))
             ElevatedCard(
                 elevation = CardDefaults.cardElevation(10.dp),
@@ -94,7 +94,8 @@ fun FormDataDiri(modifier: Modifier) {
             ) {
 
             }
-    }
+
+        }
 
 
 
