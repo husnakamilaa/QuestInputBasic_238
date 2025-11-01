@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
@@ -43,10 +44,12 @@ fun FormDataDiri(modifier: Modifier) {
     var textName by remember { mutableStateOf(value="") }
     var textAlamat by remember { mutableStateOf(value="") }
     var textJK by remember { mutableStateOf(value = "") }
+    var textStatus by remember { mutableStateOf(value = "") }
 
     var name by remember { mutableStateOf(value = "") }
     var alamat by remember { mutableStateOf(value = "") }
     var jenis by remember { mutableStateOf(value = "") }
+    var status by remember { mutableStateOf(value = "") }
 
     val gender: List<String> = listOf("Laki-laki", "Perempuan")
     val statusPerkawinan: List<String> = listOf("Janda", "Lajang", "Duda")
@@ -97,7 +100,7 @@ fun FormDataDiri(modifier: Modifier) {
                         .padding(horizontal = 16.dp, vertical = 20.dp),
                     verticalArrangement = Arrangement.spacedBy(20.dp)
                 ) {
-                    // Nama Lengkap
+
                     OutlinedTextField(
                         value = textName,
                         onValueChange = { textName = it },
@@ -106,7 +109,6 @@ fun FormDataDiri(modifier: Modifier) {
                         modifier = Modifier.fillMaxWidth()
                     )
 
-                    // Jenis Kelamin
                     Column {
                         Text("Jenis Kelamin", fontWeight = FontWeight.SemiBold)
                         gender.forEach { item ->
@@ -128,7 +130,6 @@ fun FormDataDiri(modifier: Modifier) {
                         }
                     }
 
-                    // Status Perkawinan
                     Column {
                         Text("Status Perkawinan", fontWeight = FontWeight.SemiBold)
                         statusPerkawinan.forEach { item ->
@@ -136,21 +137,20 @@ fun FormDataDiri(modifier: Modifier) {
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .selectable(
-                                        selected = textStatus == item,
-                                        onClick = { textStatus = item }
+                                        selected = statusPerkawinan == item,
+                                        onClick = { statusPerkawinan = item }
                                     ),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 RadioButton(
-                                    selected = textStatus == item,
-                                    onClick = { textStatus = item }
+                                    selected = statusPerkawinan == item,
+                                    onClick = { statusPerkawinan = item }
                                 )
                                 Text(text = item)
                             }
                         }
                     }
 
-                    // Alamat
                     OutlinedTextField(
                         value = textAlamat,
                         onValueChange = { textAlamat = it },
@@ -159,7 +159,6 @@ fun FormDataDiri(modifier: Modifier) {
                         modifier = Modifier.fillMaxWidth()
                     )
 
-                    // Tombol Submit
                     Button(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -169,7 +168,7 @@ fun FormDataDiri(modifier: Modifier) {
                             name = textName
                             jenis = textJK
                             alamat = textAlamat
-                            status = textStatus
+                            status = statusPerkawinan
                         },
                         colors = ButtonDefaults.buttonColors(
                             containerColor = Color(0xFF9B47E6)
