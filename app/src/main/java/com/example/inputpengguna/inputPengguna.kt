@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.HorizontalDivider
@@ -27,8 +28,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -44,15 +47,48 @@ fun FormDataDiri(modifier: Modifier) {
     val gender: List<String> = listOf("Laki-laki", "Perempuan")
     val statusPerkawinan: List<String> = listOf("Janda", "Lajang", "Duda")
 
-    Column(modifier= modifier.padding(top = 50.dp),
-        verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally)
-    {
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        contentAlignment = Alignment.TopCenter
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Top
+        ){
+
+        }
+
+    }
+        Box(
+        ){
+            Card(modifier = Modifier
+                .fillMaxWidth()
+                .height(300.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = Color(android.graphics.Color.parseColor("#CD73E8"))
+                )
+            ) {
+                Text(text = "Formulir Pendaftaran")
+            }
+        }
         Box(modifier = Modifier
-            .fillMaxWidth(1f),
-            colors = CardDefaults.cardColors(
-                containerColor = Color(android.graphics.Color.parseColor("#E9C1F5"))
-            )) {
+            .fillMaxSize()
+        ){
+            Card (modifier = Modifier
+                .fillMaxSize()
+                .height(100.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = Color(android.graphics.Color.parseColor("#E9C1F5"))
+                )
+            ) {
+
+
+            }
+
+    }
+
             ElevatedCard (
                 elevation= CardDefaults.cardElevation(defaultElevation = 10.dp),
                 colors = CardDefaults.cardColors(containerColor = Color.White),
@@ -110,5 +146,4 @@ fun FormDataDiri(modifier: Modifier) {
             }
         }
 
-        }
-}
+
