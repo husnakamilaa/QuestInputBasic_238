@@ -83,35 +83,10 @@ fun FormDataDiri(modifier: Modifier) {
             }
         }
             Spacer(modifier = Modifier.height(16.dp))
-    }
-
-        Box(
-        ){
-            Card(modifier = Modifier
-                .fillMaxWidth()
-                .height(300.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = Color(android.graphics.Color.parseColor("#CD73E8"))
-                )
-            ) {
-                Text(text = "Formulir Pendaftaran")
-            }
-        }
-        Box(modifier = Modifier
-            .fillMaxSize()
-        ){
-            Card (modifier = Modifier
-                .fillMaxSize()
-                .height(100.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = Color(android.graphics.Color.parseColor("#E9C1F5"))
-                )
-            ) {
-
-
-            }
 
     }
+
+
 
             ElevatedCard (
                 elevation= CardDefaults.cardElevation(defaultElevation = 10.dp),
