@@ -1,6 +1,7 @@
 package com.example.inputpengguna
 
 import androidx.annotation.Dimension
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -67,24 +68,16 @@ fun FormDataDiri(modifier: Modifier) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(70.dp),
+                    .height(70.dp)
+                    .background(Color(0xFFCD73E8)),
                 contentAlignment = Alignment.Center
             ) {
-                Card(
-                    colors = CardDefaults.cardColors(
-                        containerColor = Color(0xFFCD73E8)
-                    ),
-                    modifier = Modifier.fillMaxSize()
-                ) {
-                    Box(contentAlignment = Alignment.Center) {
-                        Text(
-                            text = "Formulir Pendaftaran",
-                            color = Color.White,
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 20.sp
-                        )
-                    }
-                }
+                Text(
+                    text = "Formulir Pendaftaran",
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp
+                )
             }
             Spacer(modifier = Modifier.height(16.dp))
             ElevatedCard(
