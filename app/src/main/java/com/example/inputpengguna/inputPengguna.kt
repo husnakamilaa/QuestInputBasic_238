@@ -137,14 +137,14 @@ fun FormDataDiri(modifier: Modifier) {
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .selectable(
-                                        selected = statusPerkawinan == item,
-                                        onClick = { statusPerkawinan = item }
+                                        selected = textStatus == item,
+                                        onClick = { textStatus = item }
                                     ),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 RadioButton(
-                                    selected = statusPerkawinan == item,
-                                    onClick = { statusPerkawinan = item }
+                                    selected = textStatus == item,
+                                    onClick = { textStatus = item }
                                 )
                                 Text(text = item)
                             }
@@ -168,7 +168,7 @@ fun FormDataDiri(modifier: Modifier) {
                             name = textName
                             jenis = textJK
                             alamat = textAlamat
-                            status = statusPerkawinan
+                            status = textStatus
                         },
                         colors = ButtonDefaults.buttonColors(
                             containerColor = Color(0xFF9B47E6)
