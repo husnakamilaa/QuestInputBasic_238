@@ -57,6 +57,7 @@ fun FormDataDiri(modifier: Modifier) {
 
     Box(
         modifier = modifier
+            .background(Color(0xFFE9C1F5))
             .fillMaxSize()
             .padding(16.dp),
         contentAlignment = Alignment.TopCenter
