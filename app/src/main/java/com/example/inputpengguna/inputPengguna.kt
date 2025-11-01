@@ -63,6 +63,14 @@ fun FormDataDiri(modifier: Modifier) {
                     .height(70.dp),
                 contentAlignment = Alignment.Center
             ) {
+                Card(
+                    colors = CardDefaults.cardColors(
+                        containerColor = Color(0xFFCD73E8)
+                    ),
+                    modifier = Modifier.fillMaxSize()
+                ) {
+
+                }
 
             }
         }
