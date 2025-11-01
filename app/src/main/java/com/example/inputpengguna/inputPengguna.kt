@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
@@ -83,66 +84,20 @@ fun FormDataDiri(modifier: Modifier) {
             }
         }
             Spacer(modifier = Modifier.height(16.dp))
+            ElevatedCard(
+                elevation = CardDefaults.cardElevation(10.dp),
+                colors = CardDefaults.cardColors(containerColor = Color.White),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .heightIn(min = 650.dp)
+                    .padding(horizontal = 8.dp)
+            ) {
 
+            }
     }
 
 
 
-            ElevatedCard (
-                elevation= CardDefaults.cardElevation(defaultElevation = 10.dp),
-                colors = CardDefaults.cardColors(containerColor = Color.White),
-                modifier = Modifier
-                    .height(950.dp)
-                    .width(380.dp)
-            ){
-                Column  (modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp)) {
-                    OutlinedTextField(
-                        value = textName,
-                        singleLine = true,
-                        shape = MaterialTheme.shapes.large,
-                        modifier = Modifier.width(width = 250.dp),
-                        label = { Text("Nama Lengkap") },
-                        onValueChange = {
-                            textName = it
-                        }
-                    )
-                    Row {
-                        gender.forEach { item ->
-                            Row(
-                                modifier = Modifier.selectable(
-                                    selected = textJK == item,
-                                    onClick = { textJK = item }
-                                ), verticalAlignment = Alignment.CenterVertically) {
-                                RadioButton(
-                                    selected = textJK == item,
-                                    onClick = {
-                                        textJK = item
-                                    })
-                                Text(text = item)
-                            }
-                        }
-                    }
-                    OutlinedTextField(
-                        value = textAlamat,
-                        singleLine = true,
-                        modifier = Modifier.width(width = 250.dp),
-                        label = { Text(text = "Alamat Lengkap") },
-                        onValueChange = {
-                            textAlamat = it
-                        }
-                    )
-                    Button(
-                        modifier = Modifier.fillMaxWidth(fraction = 1f),
-                        enabled = textAlamat.isNotEmpty(),
-                        onClick = {
-                            name = textName
-                            jenis = textJK
-                            alamat = textAlamat
-                        }) {
-                        Text(text = stringResource(R.string.submit))
-                    }
-                }
-            }
-        }
+
 
 
